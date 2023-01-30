@@ -1,15 +1,18 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
+const util = require("util");
 const generateMarkdown = require('./generateMarkdown');
+const writeFileAsync = util.promisify(fs.writeFile);
 
 // TODO: Create an array of questions for user input
-
-const questions = [
+function promptUser() {
+    return inquirer.prompt([
     {
         type: 'input',
         message: 'Please entire a title for your README.',
         name: 'title',
+        // *NEED TO TRY TO VALIDATE ANSWERS AND ENSURE THEY ARE PROPERLY CODED TO BE WRITTEN TO README FILE
     },
     {
         type: 'input',
@@ -53,34 +56,29 @@ const questions = [
         name: 'tests',
     },
 
-]
+])
+}
 
 
 // TODO: Create a function to write README file
-function writeToFile(data) {
 
-    fs.writeFile('./dist/README.md', data)
-    console.log('Navigate to the "dist" folder to view your new README')
-
-}
 
 // TODO: Create a function to initialize app
-function init() {
-    return inquirer.prompt(questions);
-
+async function init() {
+    try {
+        const answers = await promptUser();
+        const generateContent = generateMarkdown(answers);
+        await writeFileAsync('./dist/README.md', generateContent);
+        console.log('Check the "dist" folder for your new README');
+        }   catch(err) {
+            console.log(err);
+        }
+        
 }
+    
+
 
 // Function call to initialize app
-init()
-.then(data => {
-    generateMarkdown(data);
-})
-.then(data => {
-    writeToFile(data);
-
-})
-.catch(err => {
-    console.log(err)
-});
+init();
 
 
