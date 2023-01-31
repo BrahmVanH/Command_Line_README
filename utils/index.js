@@ -12,6 +12,7 @@ function promptUser() {
         type: 'input',
         message: 'Please entire a title for your README.',
         name: 'title',
+        default: 'Project Title',
         // *NEED TO TRY TO VALIDATE ANSWERS AND ENSURE THEY ARE PROPERLY CODED TO BE WRITTEN TO README FILE
     },
     {
@@ -37,8 +38,13 @@ function promptUser() {
     {
         type: 'list',
         message: 'Choose a license',
-        choices: [''],
+        choices: ['Apache 2.0', 'BSD 3-Clause', 'BSD 2-Clause', 'GPL V3', 'GPL V2', 'AGPL v3', 'LGPL v3', 'Unlicense', 'The Do What the Fuck You Want to Public License', 'MIT'],
         name: 'license',
+        validate: (answer) => {
+            if (answer == 'Apache 2.0') {
+               let answer = '[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)'
+            }
+        }
     },
     {
         type: 'input',
