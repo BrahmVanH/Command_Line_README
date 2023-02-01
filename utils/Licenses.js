@@ -1,46 +1,55 @@
-Apache
-Apache 2.0 License
-[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+const licenses = [
+{
+name: 'Apache 2.0',
+badge: '[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)]',
+link: '(https://opensource.org/licenses/Apache-2.0)',
+},
+{
+name: 'BSD 3-Clause',
+badge: '[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)]',
+link: '(https://opensource.org/licenses/BSD-3-Clause)',
+},
+{
+name: 'BSD 2-Clause',
+badge: '[![License](https://img.shields.io/badge/License-BSD_2--Clause-orange.svg)]',
+link: '(https://opensource.org/licenses/BSD-2-Clause)',
+},
+{
+name: 'GPL v3',
+badge: '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)]',
+link: '(https://www.gnu.org/licenses/gpl-3.0)',
+},
+{
+name: 'GPL v2',
+badge: '[![License: GPL v2](https://img.shields.io/badge/License-GPL_v2-blue.svg)]',
+link: '(https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)',
+},
+{
+name: 'AGPL v3',
+badge: '[![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)]',
+link: '(https://www.gnu.org/licenses/agpl-3.0)',
+},
+{
+name: 'LGPL v3',
+badge: '[![License: LGPL v3](https://img.shields.io/badge/License-LGPL_v3-blue.svg)]',
+link: '(https://www.gnu.org/licenses/lgpl-3.0)',
+},
+{
+name: 'Unlicense',
+badge: '[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)]',
+link: '(http://unlicense.org/)',
+},
+{
+name: 'The Do What the Fuck You Want to Public License',
+badge: '[![License: WTFPL](https://img.shields.io/badge/License-WTFPL-brightgreen.svg)]',
+link: '(http://www.wtfpl.net/about/)',
+},
+{
+name: 'MIT',
+badge: '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]',
+link: '(https://opensource.org/licenses/MIT)',
+},
+];
 
-Boost
-Boost Software License 1.0
-[![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)](https://www.boost.org/LICENSE_1_0.txt)
+module.exports = licenses;
 
-BSD
-BSD 3-Clause License
-[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
-
-BSD 2-Clause License
-[![License](https://img.shields.io/badge/License-BSD_2--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause)
-
-GNU
-GNU GPL v3
-License: GPL v3
-[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-
-GNU GPL v2
-License: GPL v2
-[![License: GPL v2](https://img.shields.io/badge/License-GPL_v2-blue.svg)](https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html)
-
-GNU AGPL v3
-License: AGPL v3
-[![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
-
-GNU LGPL v3
-License: LGPL v3
-[![License: LGPL v3](https://img.shields.io/badge/License-LGPL_v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)
-
-Unlicense
-The Unlicense
-License: Unlicense
-[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
-
-WTFPL
-The Do What the Fuck You Want to Public License
-License: WTFPL
-[![License: WTFPL](https://img.shields.io/badge/License-WTFPL-brightgreen.svg)](http://www.wtfpl.net/about/)
-
-MIT
-The MIT License
-License: MIT
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
