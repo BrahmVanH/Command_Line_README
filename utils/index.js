@@ -1,18 +1,51 @@
-// TODO: Include packages needed for this application
+// The lines below import the required packages to run the application
 const inquirer = require('inquirer');
 const fs = require('fs');
 const util = require("util");
 const generateMarkdown = require('./generateMarkdown');
 const writeFileAsync = util.promisify(fs.writeFile);
 
-// TODO: Create an array of questions for user input
+// This function contains both the inquirer package's parameters as well as 
+// the prompt to run inquirer in the terminal.
 function promptUser() {
     return inquirer.prompt([
+    {
+        // List of all questions to be prompted by Inquirer
+        type: 'input',
+        message: 'Please enter your GitHub username to be included in your README',
+        name: 'username',
+        default: 'N/A',
+        // Validation for all questions to ensure the user includes vital information
+        validate: usernameInput => {
+            if(usernameInput) {
+                return true;
+            } if(!usernameInput) {
+                console.log("Please include your GitHub username so other developers know how to contact you for more information. Otherwise, enter 'N/A'");
+                return false;
+            }
+        } 
+    },
+    {
+        type: 'input',
+        message: 'Please enter your email address to be included in your README',
+        name: 'email',
+        default: 'N/A',
+        // Validation for all questions to ensure the user includes vital information
+        validate: emailInput => {
+            if(emailInput) {
+                return true;
+            } if(!emailInput) {
+                console.log("Please include your email address so other developers know how to contact you for more information. Otherwise, enter 'N/A'");
+                return false;
+            }
+        } 
+    },
     {
         type: 'input',
         message: 'Please entire a title for your README.',
         name: 'title',
         default: 'Project Title',
+        // Validation for all questions to ensure the user includes vital information
         validate: titleInput => {
             if(titleInput) {
                 return true;
@@ -21,7 +54,7 @@ function promptUser() {
                 return false;
             }
         }
-        // *NEED TO TRY TO VALIDATE ANSWERS AND ENSURE THEY ARE PROPERLY CODED TO BE WRITTEN TO README FILE
+        
     },
     {
         type: 'input',
@@ -39,7 +72,7 @@ function promptUser() {
     {
         type: 'input',
         message: 'Please enter installation instructions for your application.',
-        name: 'install',
+        name: 'installation',
         default: 'N/A',
         validate: installationInput => {
             if(installationInput) {
@@ -85,7 +118,7 @@ function promptUser() {
     {
         type: 'list',
         message: 'Choose a license',
-        choices: ['Apache 2.0', 'BSD 3-Clause', 'BSD 2-Clause', 'GPL V3', 'GPL V2', 'AGPL v3', 'LGPL v3', 'Unlicense', 'The Do What the Fuck You Want to Public License', 'MIT'],
+        choices: ['Apache 2.0', 'BSD 3-Clause', 'BSD 2-Clause', 'GPL v3', 'GPL v2', 'AGPL v3', 'LGPL v3', 'Unlicense', 'The Do What the Fuck You Want to Public License', 'MIT'],
         name: 'license',
         default: 'MIT',
         when: ( {confirmLicense} ) => {
@@ -100,6 +133,7 @@ function promptUser() {
         type: 'input',
         message: 'Please enter a list of features available on your web application separated by commas.',
         name: 'features',
+        default: 'N/A',
         validate: featuresInput => {
             if(featuresInput) {
                 return true;
@@ -114,6 +148,7 @@ function promptUser() {
         type: 'input',
         message: 'Please explain how other developers can contribute to your project.',
         name: 'contribute',
+        default: 'N/A',
         validate: contributeInput => {
             if(contributeInput) {
                 return true;
@@ -127,6 +162,7 @@ function promptUser() {
         type: 'input',
         message: 'Please list tests for your application.',
         name: 'tests',
+        default: 'N/A',
         validate: testsInput => {
             if(testsInput){
                 return true;
@@ -140,15 +176,17 @@ function promptUser() {
 ])
 }
 
+// This function initiates the README creation process. 
+// The function is async, to allow both calling of the
+// promptUser function and handling of its responses in the same function.
 
-// TODO: Create a function to write README file
-
-
-// TODO: Create a function to initialize app
 async function init() {
     try {
+        // This creates an object out of the user's responses to the inquiries
         const answers = await promptUser();
+        // This creates an object out of the markdown content created by generateMarkdown
         const generateContent = generateMarkdown(answers);
+        // This function call is prefaced with 'await' to allow generateContent to be defined before writing the file
         await writeFileAsync('./dist/README.md', generateContent);
         console.log('Check the "dist" folder for your new README');
         }   catch(err) {
@@ -158,8 +196,8 @@ async function init() {
 }
     
 
+// Function call to initiate application
 
-// Function call to initialize app
 init();
 
 

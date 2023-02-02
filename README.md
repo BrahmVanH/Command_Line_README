@@ -1,37 +1,56 @@
-# d
+# CLI README Generator
 
-  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]
-
+  
   ## Description 
+  
+  This project utilizes a command line application, via node.js, to create a professional README using user input data. Creating README's is something every developer will do for every application they push, so automating the process is a must.
 
-  s
+  https://github.com/BrahmVanH/Command_Line_README
+  Link to video demonstration: https://drive.google.com/file/d/1F8J0QAE-QbYoyy9QQ7ltEvdYHtHfMotk/view
+  
+  ## Table of Contents
+
+  ⋆[Installation](#Installation)
+  ⋆[Usage](#Usage)
+  ⋆[Credits](#Credits)
+  ⋆[License](#License)
+  ⋆[Features](#Features)
+  ⋆[Contributions](#Contributions)
+  ⋆[Test](#Contributions)
 
   ## Installation 
 
-  undefined
+  No installation necessary, just clone this repository and open the directory in your IDE.
 
   ## Usage
 
-  s
+  To use this application, first open a new terminal in your IDE. Navigate to the directory holding this application and install the dependencies using 'npm install'. Next, ensure you have Node.js installed and enter 'node index.js' into your terminal. You have initiated the application and you  may follow the prompts to create your README.
 
   ## Credits 
 
-  s
+  N/A
 
   ## License
 
-  (https://opensource.org/licenses/MIT)
+  N/A
   
-
   ## Features
 
-  f
+  Inquirer npm-package
 
   ## Contributions
 
-  f
+  N/A
 
   ## Test
 
-  undefined
+  N/A
+
+  ## Question
+
+  If you have any questions about the project you can reach out to me via email or GitHub with the information below. 
+
+  >Email: brahmvanh@gmail.com 
+
+  >GitHub: [BrahmVanH](https://github.com/BrahmVanH)
 
