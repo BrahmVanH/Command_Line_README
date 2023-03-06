@@ -1,7 +1,7 @@
 **THIS README WAS COMPLETED USING THE APPLICATION PROVIDED**
 # CLI README Generator
 
-
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]
   
   ## Description 
   
@@ -22,11 +22,12 @@
 
   ## Installation 
 
-  No installation necessary, just clone this repository and open the directory in your IDE.
+  This application requires the installation of nodejs on your machine, as well as an 'inquirer' dependency. Navigate to the root directory for this application then enter 'npm install', to install dependency. 
+
 
   ## Usage
 
-  To use this application, first open a new terminal in your IDE. Navigate to the directory holding this application and install the dependencies using 'npm install'. Next, ensure you have Node.js installed and enter 'node index.js' into your terminal. You have initiated the application and you  may follow the prompts to create your README.
+  In the root folder of the application, enter 'npm start' to initiate. Follow the prompts in the terminal. Once complete, you should see your completed README in the 'dist' folder of 'utils'.
 
   ## Credits 
 
@@ -34,7 +35,7 @@
 
   ## License
 
-  N/A
+  (https://opensource.org/licenses/MIT)
   
   ## Features
 
