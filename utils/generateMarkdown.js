@@ -126,13 +126,13 @@ function generateMarkdown(data) {
   ## Features
 
   ${data.features.split(',').map((feature) => {
-		return `- ${feature}`;
+		return `- ${feature.trim()}`;
 	})}
 
   ## Technologies
 
   ${data.technologies.split(',').map((technology) => {
-		return `- ${technology}`;
+		return `- ${technology.trim()}`;
 	})}
 
   ## Contributions
